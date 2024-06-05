@@ -1,0 +1,23 @@
+body, html {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #808080; /* серый фон */
+}
+
+#locationButton {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #28a745; /* зеленая кнопка */
+    border: none;
+}
+
+#locationButton:hover {
+    background-color: #218838; /* темно-зеленая кнопка при наведении */
+}
