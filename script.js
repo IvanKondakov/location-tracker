@@ -9,12 +9,14 @@ function getLocation() {
 }
 
 function showPosition(position) {
+    console.log("Got position:", position);
     const { latitude, longitude } = position.coords;
     const data = {
         latitude: latitude,
         longitude: longitude
     };
     
+    console.log("Sending data to bot:", data);
     // Отправка данных боту через Telegram Web Apps API
     Telegram.WebApp.sendData(JSON.stringify(data));
 }
@@ -35,6 +37,6 @@ function showError(error) {
             errorMessage = "An unknown error occurred.";
             break;
     }
-    console.log(errorMessage);
+    console.log("Error:", errorMessage);
     Telegram.WebApp.sendData(JSON.stringify({ error: errorMessage }));
 }
