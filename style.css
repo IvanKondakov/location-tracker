@@ -3,21 +3,21 @@ body, html {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #808080; /* серый фон */
+    background-color: #f0f0f0;
 }
 
 #locationButton {
     border-radius: 50%;
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
     font-size: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #28a745; /* зеленая кнопка */
+    background-color: #28a745;
     border: none;
 }
 
 #locationButton:hover {
-    background-color: #218838; /* темно-зеленая кнопка при наведении */
+    background-color: #218838;
 }
