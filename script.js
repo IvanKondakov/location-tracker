@@ -1,8 +1,14 @@
 document.getElementById("locationButton").addEventListener("click", getLocation);
 
+let locationGranted = false;
+
 function getLocation() {
     if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(showPosition, showError);
+        if (!locationGranted) {
+            navigator.geolocation.getCurrentPosition(showPosition, showError, { enableHighAccuracy: true });
+        } else {
+            navigator.geolocation.getCurrentPosition(showPosition, null, { enableHighAccuracy: true });
+        }
     } else {
         console.log("Geolocation is not supported by this browser.");
     }
@@ -17,8 +23,8 @@ function showPosition(position) {
     };
     
     console.log("Sending data to bot:", data);
-    // Отправка данных боту через Telegram Web Apps API
     Telegram.WebApp.sendData(JSON.stringify(data));
+    locationGranted = true;
 }
 
 function showError(error) {
